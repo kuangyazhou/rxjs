@@ -1,0 +1,23 @@
+{
+  "name": "rx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuangyazhou/rxjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuangyazhou/rxjs/issues"
+  },
+  "homepage": "https://github.com/kuangyazhou/rxjs#readme",
+  "dependencies": {
+    "immutable": "^3.8.2",
+    "rxjs": "^5.5.2"
+  }
+}
