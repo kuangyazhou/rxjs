@@ -3,6 +3,12 @@
     <h1>{{ msg }}</h1>
     <!-- <h2>Essential Links</h2> -->
     <div><button class="button">rxjs</button></div>
+    <img src="https://res.cloudinary.com/dohtkyi84/image/upload/c_scale,w_50/v1483019072/head-cover6.jpg" alt="">
+  <img src="https://res.cloudinary.com/dohtkyi84/image/upload/c_scale,w_50/v1483019072/head-cover5.jpg" alt="">
+  <img src="https://res.cloudinary.com/dohtkyi84/image/upload/c_scale,w_50/v1483019072/head-cover4.jpg" alt="">
+  <img src="https://res.cloudinary.com/dohtkyi84/image/upload/c_scale,w_50/v1483019072/head-cover3.jpg" alt="">
+  <img src="https://res.cloudinary.com/dohtkyi84/image/upload/c_scale,w_50/v1483019072/head-cover2.jpg" alt="">
+  <img src="https://res.cloudinary.com/dohtkyi84/image/upload/c_scale,w_50/v1483019072/head-cover1.jpg" alt="">
   </div>
 </template>
 
@@ -34,6 +40,23 @@ Rx.Observable.fromEvent(button, 'click')
     .subscribe(() => {
         console.log('clicked!!!!')
     });
+    var imgList = document.getElementsByTagName('img');
+
+var movePos = Rx.Observable.fromEvent(document, 'mousemove')
+.map(e => ({ x: e.clientX, y: e.clientY }))
+
+function followMouse(DOMArr) {
+  const delayTime = 600;
+  DOMArr.forEach((item, index) => {
+   let temp= movePos.delay(delayTime * (Math.pow(0.2, index) + Math.cos(index / 4)) / 2);
+   Rx.Observable.concat(temp)
+      .subscribe(function (pos){
+        item.style.transform = 'translate3d(' + pos.x + 'px, ' + pos.y + 'px, 0)';
+      });
+  });
+}
+
+followMouse(Array.from(imgList))
   }
 }
 </script>
@@ -53,5 +76,11 @@ li {
 }
 a {
   color: #42b983;
+}
+img{
+  position: absolute;
+  border-radius: 50%;
+  border: 3px white solid;
+  transform: translate3d(0,0,0);
 }
 </style>
