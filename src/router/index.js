@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Todo from '@/components/todo';
 import Lesson from '@/components/lesson/one';
+import Two from '@/components/lesson/two';
 
 Vue.use(Router)
 
@@ -23,6 +24,10 @@ export default new Router({
       path: '/lesson',
       name: 'lesson',
       component: Lesson
+    }, {
+      path: '/two',
+      name: 'two',
+      component: Two
     }
   ]
 })
