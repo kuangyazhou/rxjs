@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "compression-webpack-plugin": "^1.1.11",
     "rxjs": "^5.5.7",
     "timeline": "^1.1.5",
     "vue": "^2.5.2",
