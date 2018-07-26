@@ -22,6 +22,8 @@ export default {
       observer.next("B");
       observer.complete();
     }).subscribe(
+
+      
       function(data) {
         console.log(data);
       },
